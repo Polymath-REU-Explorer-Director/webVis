@@ -1,0 +1,40 @@
+<html>
+<head>
+    <script type="text/javascript" src="https://unpkg.com/vis-network/standalone/umd/vis-network.min.js"></script>
+    <link href="style.css" rel="stylesheet" type="text/css" />
+</head>
+<body>
+    
+    <h1>Explorer Director Game</h1>
+    <button onclick="ed.newGame();">New Game</button>
+    <button onclick="setToken();">Set Token</button>
+    <p id="selectNode" style="display:inline; color:blue"></p>
+    <p id="gameWon" style="display:inline; color:red"></p>
+    <p id="makeMove" style="display:inline; color:green"></p>
+    <div id="mynetwork"></div>
+    <div onclick="if(edits){ed.updateGraph(); ed.defaultBorderColor(); ed.recolorUnvisitedNodes()};" id="network-popUp">
+      <span id="operation">node</span> <br>
+      <table style="margin:auto;"><tr>
+        <td>id</td><td><input id="node-id" value="new value" /></td>
+      </tr></table>
+      <input type="button" value="save" id="saveButton" />
+      <input type="button" value="cancel" id="cancelButton" />
+    </div>
+
+    <script type="text/javascript" src="graph.js"></script>
+    <script type="text/javascript" src="ed.js"></script>
+    <script type="text/javascript" src="visualize.js"></script>
+
+    <p>
+        Distance:
+        <input type="number" id="distInput"></input>
+        <button onClick="ed.seePossibleMoves();">See Possible Moves</button>
+        <button onClick="ed.defaultBorderColor();">Clear Possible Moves</button>
+        <button onClick="ed.directorMoveRandom(true);">Explore</button>
+        
+        <p>Computer Player Options:</p>
+        <button onClick="alert('Sorry, this feature is not complete');">Computer Explorer</button>
+    </p>
+
+</body>
+</html>
